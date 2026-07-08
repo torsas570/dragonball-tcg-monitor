@@ -29,3 +29,5 @@ jobs:
         with:
           path: state.json
           key: monitor-state-${{ github.run_id }}
+
+# repo: torsas570/dragonball-tcg-monitor
