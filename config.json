@@ -1,0 +1,540 @@
+{
+    "_comment_proyecto": "Monitor DRAGON BALL SUPER CARD GAME — FUSION WORLD (Bandai). Juego ACTIVO, mismas tiendas que One Piece (distribuidores Bandai TCG). MÁXIMA prioridad: MANGA BOOSTER (sets SB — SB01/SB02/SB03...), tanto cases como booster boxes. Luego cases de cualquier set, y promos. Primera pasada = baseline silencioso (absorbe el catálogo actual); a partir de ahí avisa de NUEVOS listados (preventas) y RESTOCKS.",
+    "telegram_bot_token": "USE_GITHUB_SECRET",
+    "telegram_chat_id": "USE_GITHUB_SECRET",
+    "check_interval_minutes": 15,
+    "check_interval_high_minutes": 5,
+    "notify_only_in_stock": true,
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "_comment_required": "Solo se notifica si el título contiene alguno de estos. 'fusion world' capta el juego actual; 'dragon ball' capta cases/sobres que no repitan 'fusion world'. ドラゴンボール para imports JP.",
+    "required_keywords": [
+        "dragon ball",
+        "dragonball",
+        "ドラゴンボール",
+        "fusion world"
+    ],
+    "_comment_exclude": "Descarta MERCH que ensucia la búsqueda 'dragon ball' (figuras, funko, tazas, tomos de manga, ropa...) y otros juegos de cartas Dragon Ball NO Fusion World (Heroes, Carddass, IC, Super Battle). OJO: NO poner 'manga' a secas aquí (mataría el MANGA BOOSTER). Si algo legítimo se cuela, quítalo.",
+    "exclude_keywords": [
+        "funko",
+        "nendoroid",
+        "figuarts",
+        "figura",
+        "figure",
+        "ichiban kuji",
+        "statue",
+        "estatua",
+        "plush",
+        "peluche",
+        "taza",
+        "mug",
+        "glass",
+        "vaso",
+        "poster",
+        "camiseta",
+        "t-shirt",
+        "llavero",
+        "keychain",
+        "pin's",
+        "mochila",
+        "backpack",
+        "dragon ball heroes",
+        "carddass",
+        "super battle",
+        "ic card",
+        "visual adventure"
+    ],
+    "_comment_top_priority": "🔥 MÁXIMA prioridad — MANGA BOOSTER (se marca y se muestra el PRIMERO). Códigos SB (SB01, SB02, SB03...) y variantes de nombre. Al reveal de un SB nuevo, añade su código aquí si hiciera falta.",
+    "top_priority_keywords": [
+        "manga booster",
+        "special manga",
+        "manga vol",
+        "sb01",
+        "sb02",
+        "sb03",
+        "sb04",
+        "sb05"
+    ],
+    "_comment_high_value": "🚨 Cases y booster boxes de cualquier set (lo segundo que más interesa).",
+    "high_value_keywords": [
+        "case",
+        "booster box",
+        "booster case",
+        "sealed case",
+        "display",
+        "booster display",
+        "caja de sobres",
+        "caja sellada",
+        "carton",
+        "cartón",
+        "box case",
+        "case box"
+    ],
+    "_comment_promo": "🎁 Productos promocionales / de torneo (interesan al usuario). Promotion Pack Vol.X, tournament, championship.",
+    "promo_keywords": [
+        "promotion pack",
+        "promo pack",
+        "promotion cards",
+        "tournament pack",
+        "tournament",
+        "championship",
+        "sobre promocional",
+        "pack promocional",
+        "promocional",
+        "promo"
+    ],
+    "sites": [
+        {
+            "_comment": "=========================================================",
+            "_comment2": "=== HIGH — MANGA BOOSTER / CASES ESPECÍFICOS (MÁXIMA PRIORIDAD). Colecciones por set verificadas jun-2026. ===",
+            "name": "UniverseTCG Manga Booster SB02 (ES)",
+            "url": "https://www.universetcg.com/collections/fusionworld-sb02/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "UniverseTCG Manga Booster SB01 (ES)",
+            "url": "https://www.universetcg.com/collections/fusionworld-sb01/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "UniverseTCG Manga Booster SB03 (ES, futuro)",
+            "url": "https://www.universetcg.com/collections/fusionworld-sb03/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "UniverseTCG Story Booster ST01 (ES)",
+            "url": "https://www.universetcg.com/collections/fusionworld-st01/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "UniverseTCG Cross Force FB10 (ES)",
+            "url": "https://www.universetcg.com/collections/cross-force-fusion-world/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Kantocards Manga Booster 01 (ES)",
+            "url": "https://kantocards.com/collections/dragon-ball-manga-booster-01/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Kantocards Booster Box Dragon Ball (ES)",
+            "url": "https://kantocards.com/collections/booster-box-dragon-ball/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Kantocards Productos Especiales DB (ES)",
+            "url": "https://kantocards.com/collections/productos-especiales-dragon-ball/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TCG Corner Case/Box (JP)",
+            "url": "https://tcg-corner.com/collections/dragon-ball-case-box/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TCG Corner Fusion World Pre-order (JP)",
+            "url": "https://tcg-corner.com/collections/dragon-ball-fusion-world-pre-order/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+
+        {
+            "_comment": "=== HIGH — FEEDS DE PREVENTA / RESERVAS / NOVEDADES multi-juego (filtrados por 'dragon ball'/'fusion world'). Aquí aparece primero un set/case nuevo. Handles verificados. ===",
+            "name": "Madrid Norte TCG (Preventas)",
+            "url": "https://madridnortetcg.com/collections/preventas-tcg/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Madrid Norte TCG (Novedades)",
+            "url": "https://madridnortetcg.com/collections/novedades-destacadas/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Pokejotta (Pre-orders)",
+            "url": "https://pokejotta.com/collections/pre-orders/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "SparkLeaf (Pre-order, CH)",
+            "url": "https://sparkleaf.ch/collections/pokemon-one-piece-tcg-pre-order-deals/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "CardTreasure (Preorders, CH)",
+            "url": "https://cardtreasure.ch/collections/preorders/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "JapHunter (Preorder JP, CH)",
+            "url": "https://japhunter.ch/collections/preorder/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TodoHits (Reservas)",
+            "url": "https://todohits.com/collections/reservas/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TodoHits (Novedades)",
+            "url": "https://todohits.com/collections/novedades/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "JJ Collection (Preventa)",
+            "url": "https://www.jjcollection.es/collections/preventa/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "CardZone (Reservas)",
+            "url": "https://cardzone.es/collections/reservas/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "CardZone (Novedades)",
+            "url": "https://cardzone.es/collections/novedades/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TCG Level (Reservas)",
+            "url": "https://tcglevel.com/collections/reservas/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TCG Level (Novedades)",
+            "url": "https://tcglevel.com/collections/novedades/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "AllInTCG (Reservas)",
+            "url": "https://allintcg.com/collections/reservas/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "AllInTCG (Novedades)",
+            "url": "https://allintcg.com/collections/novedades/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "FreakCorp (Novedades)",
+            "url": "https://freakcorp.com/collections/novedades/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Pokemillon (Reservas)",
+            "url": "https://www.pokemillon.com/collections/reservas/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Pokemillon (Novedades)",
+            "url": "https://www.pokemillon.com/collections/novedades/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Kantocards (Nuevos productos)",
+            "url": "https://kantocards.com/collections/nuevos-productos/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Factory Cards (Reservas/Preventa)",
+            "url": "https://factorycardstcg.com/en/collections/reservas-tcg-preventa-pokemon-one-piece-y-mas",
+            "type": "html",
+            "priority": "high",
+            "selector": ".product-card, .card-wrapper, .grid__item",
+            "title_selector": ".product-card-title, .card__heading, h3",
+            "link_selector": "a[href*='/products/']",
+            "price_selector": ".price, .price-item"
+        },
+        {
+            "name": "Pokezilla (Preventas)",
+            "url": "https://pokezilla.com/collections/preventas?sort_by=created-descending",
+            "type": "html",
+            "priority": "high",
+            "selector": ".product-card, .card-wrapper, .grid__item",
+            "title_selector": ".product-card-title, .card__heading, h3",
+            "link_selector": "a[href*='/products/']",
+            "price_selector": ".price, .price-item"
+        },
+
+        {
+            "_comment": "=== HIGH — COLECCIONES DRAGON BALL (handles reales verificados jun-2026). Cobertura estable del sellado de Fusion World en tiendas Bandai. ===",
+            "name": "FreakCorp DB (ES)",
+            "url": "https://freakcorp.com/collections/dragon-ball-super-card-game/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TodoHits DB (ES)",
+            "url": "https://todohits.com/collections/dragon-ball/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "CardZone DB (ES)",
+            "url": "https://cardzone.es/collections/dragon-ball-tcg/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "La Escotilla DB (ES)",
+            "url": "https://laescotillajuegos.com/collections/dragon-ball-super-card-game/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TCG Level DB (ES)",
+            "url": "https://tcglevel.com/collections/dragon-ball/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Kantocards DB (ES)",
+            "url": "https://kantocards.com/collections/dragon-ball/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "JJ Collection DB (ES)",
+            "url": "https://www.jjcollection.es/collections/dragon-ball-tcg/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Pokemillon DB (ES)",
+            "url": "https://www.pokemillon.com/collections/dragon-ball/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Otakura DB (IT)",
+            "url": "https://otakura.com/en/collections/dragon-ball-super/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TCGHOBBY DB (TW)",
+            "url": "https://www.tcghobby.com/collections/dragon-ball/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Pixel and Block DB (UK)",
+            "url": "https://pixelandblock.co.uk/collections/dragonball-card-game/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "Evolution TCG DB (NL)",
+            "url": "https://evlutcg.com/collections/dragon-ball-super-card-game/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "TCG Corner Fusion World (JP)",
+            "url": "https://tcg-corner.com/collections/dragon-ball-fusion-world/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
+            "name": "CardOtaku Fusion World (JP)",
+            "url": "https://cardotaku.com/collections/dragon-ball-super-card-game-fusion-world/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+
+        {
+            "_comment": "=========================================================",
+            "_comment2": "=== MEDIUM — WooCommerce ES/PT (búsqueda 'fusion world', más limpia que 'dragon ball' que trae mucho merch). ===",
+            "name": "Empire Games (ES)",
+            "url": "https://www.empiregames.es/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Mono de Juegos (ES)",
+            "url": "https://www.monodejuegos.shop/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "ELIUS (ES)",
+            "url": "https://www.eliusweb.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Reino de Cartas (ES)",
+            "url": "https://reinodecartas.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Montalfan (ES)",
+            "url": "https://montalfan.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Friki de Nacimiento (ES)",
+            "url": "https://frikidenacimiento.es/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Friki Galaxy (ES)",
+            "url": "https://frikigalaxy.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Tienda Mulligan (ES)",
+            "url": "https://shop.tiendamulligan.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "TopDeck (ES)",
+            "url": "https://topdeck.es/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Arena Games (ES)",
+            "url": "https://arenagames.es/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Manavortex (ES)",
+            "url": "https://manavortex.es/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Esfantasia (ES)",
+            "url": "https://esfantasia.es/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Micelion Games (ES)",
+            "url": "https://miceliongames.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "KuriGames (ES)",
+            "url": "https://kurigames.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Asturcards (ES)",
+            "url": "https://www.asturcards.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "CardCrack (ES)",
+            "url": "https://cardcrack.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "The Golden Rabbit (ES)",
+            "url": "https://thegoldenrabbitshop.es/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "Sweet Cards Valencia (ES)",
+            "url": "https://sweetcardsvalencia.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "HoloPlaza TCG (ES)",
+            "url": "https://holoplazatcg.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "TCG Portugal (PT)",
+            "url": "https://tcgportugal.com/wp-json/wc/store/v1/products?per_page=100&search=fusion+world&orderby=date",
+            "type": "api",
+            "priority": "medium"
+        },
+
+        {
+            "_comment": "=== MEDIUM — PrestaShop ES (búsqueda 'dragon ball', funciona desde Actions). ===",
+            "name": "La Cueva Roja (ES)",
+            "url": "https://lacuevaroja.com/buscar?s=dragon+ball+fusion",
+            "type": "html",
+            "priority": "medium",
+            "selector": "#js-product-list .product-miniature",
+            "title_selector": ".product-title",
+            "link_selector": "a",
+            "price_selector": ".price"
+        },
+        {
+            "name": "Dungeon Marvels (ES)",
+            "url": "https://dungeonmarvels.com/buscar?controller=search&s=dragon+ball+fusion",
+            "type": "html",
+            "priority": "medium",
+            "selector": "#js-product-list .product-miniature",
+            "title_selector": ".product-title",
+            "link_selector": "a",
+            "price_selector": ".price"
+        },
+        {
+            "name": "Distrito Zero (ES)",
+            "url": "https://distritozero.es/buscar?controller=search&s=dragon+ball+fusion",
+            "type": "html",
+            "priority": "medium",
+            "selector": "#js-product-list .product-miniature",
+            "title_selector": ".product-title",
+            "link_selector": "a",
+            "price_selector": ".price"
+        },
+
+        {
+            "_comment": "=== MEDIUM — IMPORT JP (Shopify, envían internacional, EN). Manga booster y promos salen antes en JP. ===",
+            "name": "JumpIchiban Fusion World (JP)",
+            "url": "https://jumpichiban.com/collections/dragon-ball-super-card-game-fusion-world/products.json?limit=250",
+            "type": "api",
+            "priority": "medium"
+        },
+        {
+            "name": "TCG Corner Fusion World Fullset (JP)",
+            "url": "https://tcg-corner.com/collections/dragon-ball-fusion-world-fullset/products.json?limit=250",
+            "type": "api",
+            "priority": "medium"
+        }
+    ]
+}
