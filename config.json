@@ -356,6 +356,13 @@
             "priority": "high"
         },
         {
+            "_comment": "Sunny Store (Shopify ES): 15 productos, todo sellado, incluye FUSION WORLD SB02 MANGA (top priority).",
+            "name": "Sunny Store DB (ES)",
+            "url": "https://sunnystore.es/collections/dragon-ball/products.json?limit=250",
+            "type": "api",
+            "priority": "high"
+        },
+        {
             "name": "Otakura DB (IT)",
             "url": "https://otakura.com/en/collections/dragon-ball-super/products.json?limit=250",
             "type": "api",
