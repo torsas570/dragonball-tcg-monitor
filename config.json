@@ -24,6 +24,8 @@
   "avalanche_store_threshold": 8,
   "max_alerts_avalanche": 40,
   "notify_only_in_stock": true,
+  "_comment_oos": "Las preventas se publican a menudo agotadas/Próximamente antes de abrir la reserva: un listado NUEVO marcado 🔥/🚨 avisa aunque no tenga stock (y otra vez como RESTOCK al abrir).",
+  "notify_new_oos_priority": true,
   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
   "_comment_required": "Solo se notifica si el título contiene alguno de estos. 'fusion world' capta el juego actual; 'dragon ball' capta cases/sobres que no repitan 'fusion world'. ドラゴンボール para imports JP.",
   "required_keywords": [
@@ -32,7 +34,7 @@
     "ドラゴンボール",
     "fusion world"
   ],
-  "_comment_exclude": "Descarta MERCH que ensucia la búsqueda 'dragon ball' (figuras, funko, tazas, tomos de manga, ropa...) y otros juegos de cartas Dragon Ball NO Fusion World (Heroes, Carddass, IC, Super Battle). OJO: NO poner 'manga' a secas aquí (mataría el MANGA BOOSTER). Si algo legítimo se cuela, quítalo.",
+  "_comment_exclude": "Descarta MERCH que ensucia la búsqueda 'dragon ball' (figuras, funko, tazas, tomos de manga, ropa...) y otros juegos de cartas Dragon Ball NO Fusion World (Heroes, Carddass, IC, Super Battle). OJO: NO poner 'manga' a secas aquí (mataría el MANGA BOOSTER). Si algo legítimo se cuela, quítalo. Revisión 2026-10-05: se excluye también Dragon Ball MASTERS (el juego antiguo, sets B-xx/BT-xx, Zenkai, Ultra-Bout), que entraba como 🚨, y los accesorios 'card case'/'deck case' que casaban con 'case'. Los códigos B-28..B-33 van explícitos: NO usar 'b-1'/'b-2' a secas porque casarían con FB-1x/FB-2x de Fusion World. Cartas sueltas: Kantocards titula sus singles '<carta> - Manga Booster 01 - Dragon Ball Super: Fusion World' (134 de 134 llevaban ese sufijo, ningún sellado de ninguna tienda lo lleva) y se marcaban 🔥 por 'manga booster'.",
   "exclude_keywords": [
     "funko",
     "nendoroid",
@@ -60,9 +62,34 @@
     "carddass",
     "super battle",
     "ic card",
-    "visual adventure"
+    "visual adventure",
+    "masters",
+    "zenkai",
+    "ultra bout",
+    "ultra-bout",
+    "unison warrior",
+    "mythic booster",
+    "b-28",
+    "b-29",
+    "b-30",
+    "b-31",
+    "b-32",
+    "b-33",
+    "b28",
+    "b29",
+    "b30",
+    "b31",
+    "b32",
+    "b33",
+    "official card case",
+    "card case",
+    "deck case",
+    "- dragon ball super: fusion world",
+    "alternate art",
+    "(gold)",
+    "code card"
   ],
-  "_comment_top_priority": "🔥 MÁXIMA prioridad — MANGA BOOSTER (se marca y se muestra el PRIMERO). Códigos SB (SB01, SB02, SB03...) y variantes de nombre. Al reveal de un SB nuevo, añade su código aquí si hiciera falta.",
+  "_comment_top_priority": "🔥 MÁXIMA prioridad — MANGA BOOSTER (se marca y se muestra el PRIMERO). Códigos SB (SB01, SB02, SB03...) y variantes de nombre. Al reveal de un SB nuevo, añade su código aquí si hiciera falta. Incluye las variantes con guion (SB-01...) que usan Pokemillon/Kantocards.",
   "top_priority_keywords": [
     "manga booster",
     "special manga",
@@ -71,9 +98,14 @@
     "sb02",
     "sb03",
     "sb04",
-    "sb05"
+    "sb05",
+    "sb-01",
+    "sb-02",
+    "sb-03",
+    "sb-04",
+    "sb-05"
   ],
-  "_comment_high_value": "🚨 Cases y booster boxes de cualquier set (lo segundo que más interesa).",
+  "_comment_high_value": "🚨 Cases y booster boxes de cualquier set (lo segundo que más interesa). Revisión 2026-10-05: añadidas las formas reales de las tiendas ES/JP para la caja de 24 sobres ('Caja 24 sobres', 'Caja de 24 Sobres', 'CAJA JAPONÉS', 'Box FB09', 'FB01 Booster Japanese').",
   "high_value_keywords": [
     "case",
     "booster box",
@@ -86,7 +118,33 @@
     "carton",
     "cartón",
     "box case",
-    "case box"
+    "case box",
+    "caja 24",
+    "caja de 24",
+    "24 sobres",
+    "24 packs",
+    "caja japon",
+    "caja dragon ball",
+    "caja de dragon ball",
+    "box fb",
+    "box sb",
+    "box st",
+    "booster japanese"
+  ],
+  "_comment_priority_exclude": "Quita la marca 🔥/🚨/🎁 (no el producto) a accesorios que comparten palabra con el sellado: 'Fundas ... Display 12 unidades', 'Card Sleeves – Tournament'. Siguen llegando, en silencio.",
+  "priority_exclude": [
+    "fundas",
+    "sleeves",
+    "protectores",
+    "playmat",
+    "tapete",
+    "deck box",
+    "deckbox",
+    "storage box",
+    "card case",
+    "deck case",
+    "binder",
+    "carpeta"
   ],
   "_comment_promo": "🎁 Productos promocionales / de torneo (interesan al usuario). Promotion Pack Vol.X, tournament, championship.",
   "promo_keywords": [
@@ -135,58 +193,53 @@
       "priority": "high"
     },
     {
-      "name": "Kantocards Manga Booster 01 (ES)",
-      "url": "https://kantocards.com/collections/dragon-ball-manga-booster-01/products.json?limit=250",
-      "type": "api",
-      "priority": "high"
-    },
-    {
       "name": "Kantocards Booster Box Dragon Ball (ES)",
       "url": "https://kantocards.com/collections/booster-box-dragon-ball/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": " MXN"
     },
     {
       "name": "Kantocards Productos Especiales DB (ES)",
       "url": "https://kantocards.com/collections/productos-especiales-dragon-ball/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": " MXN"
     },
     {
       "name": "TCG Corner Case/Box (JP)",
       "url": "https://tcg-corner.com/collections/dragon-ball-case-box/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": "$"
     },
     {
       "name": "TCG Corner Fusion World Pre-order (JP)",
       "url": "https://tcg-corner.com/collections/dragon-ball-fusion-world-pre-order/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": "$"
     },
     {
       "name": "The Card Vault Display Cases (UK)",
       "url": "https://thecardvault.co.uk/collections/dragon-ball-super-cg-display-cases/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": "£"
     },
     {
       "name": "The Card Vault Booster Boxes (UK)",
       "url": "https://thecardvault.co.uk/collections/dragon-ball-super-cg-booster-boxes/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": "£"
     },
     {
       "name": "TCGMart Express Sealed Booster Box (US)",
       "url": "https://tcgmartexpress.com/collections/dragon-ball-scg-sealed-booster-box/products.json?limit=250",
       "type": "api",
-      "priority": "high"
-    },
-    {
-      "name": "Kantocards Preventas Dragon Ball (ES)",
-      "url": "https://kantocards.com/collections/preventas-dragon-ball/products.json?limit=250",
-      "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": "$"
     },
     {
       "_comment": "=== HIGH — FEEDS DE PREVENTA / RESERVAS / NOVEDADES multi-juego (filtrados por 'dragon ball'/'fusion world'). Aquí aparece primero un set/case nuevo. Handles verificados. ===",
@@ -202,8 +255,9 @@
       "priority": "high"
     },
     {
-      "name": "Pokejotta (Pre-orders)",
-      "url": "https://pokejotta.com/collections/pre-orders/products.json?limit=250",
+      "_comment": "Pokejotta redirige (301) a jottacollectz.com y su colección pre-orders está vacía. /products.json = catálogo entero, lo último publicado primero.",
+      "name": "Jotta Collectz (catálogo, ex-Pokejotta)",
+      "url": "https://www.jottacollectz.com/products.json?limit=250",
       "type": "api",
       "priority": "high"
     },
@@ -211,19 +265,22 @@
       "name": "SparkLeaf (Pre-order, CH)",
       "url": "https://sparkleaf.ch/collections/pokemon-one-piece-tcg-pre-order-deals/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": " CHF"
     },
     {
       "name": "CardTreasure (Preorders, CH)",
       "url": "https://cardtreasure.ch/collections/preorders/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": " CHF"
     },
     {
       "name": "JapHunter (Preorder JP, CH)",
       "url": "https://japhunter.ch/collections/preorder/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": " CHF"
     },
     {
       "name": "TodoHits (Reservas)",
@@ -298,12 +355,6 @@
       "priority": "high"
     },
     {
-      "name": "Kantocards (Nuevos productos)",
-      "url": "https://kantocards.com/collections/nuevos-productos/products.json?limit=250",
-      "type": "api",
-      "priority": "high"
-    },
-    {
       "name": "Factory Cards (Reservas)",
       "url": "https://factorycardstcg.com/collections/reservas-tcg-preventa-pokemon-one-piece-y-mas/products.json?limit=250",
       "type": "api",
@@ -341,16 +392,19 @@
       "priority": "high"
     },
     {
-      "name": "TCG Level DB (ES)",
-      "url": "https://tcglevel.com/collections/dragon-ball/products.json?limit=250",
+      "_comment": "La colección dragon-ball de TCG Level existe pero está vacía también en la web (oct-2026). Catálogo entero.",
+      "name": "TCG Level (catálogo)",
+      "url": "https://tcglevel.com/products.json?limit=250",
       "type": "api",
       "priority": "high"
     },
     {
-      "name": "Kantocards DB (ES)",
-      "url": "https://kantocards.com/collections/dragon-ball/products.json?limit=250",
+      "_comment": "Las colecciones dragon-ball, preventas-dragon-ball y nuevos-productos de Kantocards existen pero están vacías también en la web (oct-2026). Se sustituyen por el catálogo entero.",
+      "name": "Kantocards (catálogo)",
+      "url": "https://kantocards.com/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": " MXN"
     },
     {
       "name": "JJ Collection DB (ES)",
@@ -381,13 +435,15 @@
       "name": "TCGHOBBY DB (TW)",
       "url": "https://www.tcghobby.com/collections/dragon-ball/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": "$"
     },
     {
       "name": "Pixel and Block DB (UK)",
       "url": "https://pixelandblock.co.uk/collections/dragonball-card-game/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": "£"
     },
     {
       "name": "Evolution TCG DB (NL)",
@@ -399,23 +455,18 @@
       "name": "TCG Corner Fusion World (JP)",
       "url": "https://tcg-corner.com/collections/dragon-ball-fusion-world/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": "$"
     },
     {
       "name": "CardOtaku Fusion World (JP)",
       "url": "https://cardotaku.com/collections/dragon-ball-super-card-game-fusion-world/products.json?limit=250",
       "type": "api",
-      "priority": "high"
+      "priority": "high",
+      "currency": "¥"
     },
     {
       "_comment": "=========================================================",
-      "_comment2": "=== MEDIUM — WooCommerce ES/PT (búsqueda 'fusion world', más limpia que 'dragon ball' que trae mucho merch). ===",
-      "name": "Empire Games (ES)",
-      "url": "https://www.empiregames.es/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
-      "type": "api",
-      "priority": "medium"
-    },
-    {
       "name": "Mono de Juegos (ES)",
       "url": "https://www.monodejuegos.shop/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
       "type": "api",
@@ -488,12 +539,6 @@
       "priority": "medium"
     },
     {
-      "name": "KuriGames (ES)",
-      "url": "https://kurigames.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
-      "type": "api",
-      "priority": "medium"
-    },
-    {
       "name": "Asturcards (ES)",
       "url": "https://www.asturcards.com/wp-json/wc/store/v1/products?per_page=50&search=fusion+world&orderby=date",
       "type": "api",
@@ -532,7 +577,7 @@
     {
       "_comment": "=== MEDIUM — PrestaShop ES (búsqueda 'dragon ball', funciona desde Actions). ===",
       "name": "La Cueva Roja (ES)",
-      "url": "https://lacuevaroja.com/busqueda?controller=search&s=dragon+ball+fusion",
+      "url": "https://lacuevaroja.com/busqueda?controller=search&s=dragon+ball+fusion&order=product.date_add.desc&resultsPerPage=200",
       "type": "html",
       "priority": "medium",
       "selector": "#js-product-list .product-miniature",
@@ -541,59 +586,66 @@
       "price_selector": ".price"
     },
     {
-      "name": "Dungeon Marvels (ES)",
-      "url": "https://dungeonmarvels.com/buscar?controller=search&s=dragon+ball+fusion",
+      "name": "Dungeon Marvels (ES, por fecha)",
+      "url": "https://dungeonmarvels.com/buscar?controller=search&s=dragon+ball+fusion&order=product.date_add.desc&resultsPerPage=200",
       "type": "html",
       "priority": "medium",
       "selector": "#js-product-list .product-miniature",
       "title_selector": ".product-title",
       "link_selector": "a",
-      "price_selector": ".price"
+      "price_selector": ".price",
+      "_comment": "Nombre nuevo a propósito: con order=date_add.desc&resultsPerPage=200 aparecen productos que antes quedaban fuera de la página 1; con el nombre viejo el state los daría por NUEVOS y saldría una tanda de avisos falsos. Con nombre nuevo, baseline silencioso."
     },
     {
-      "name": "Distrito Zero (ES)",
-      "url": "https://distritozero.es/buscar?controller=search&s=dragon+ball+fusion",
+      "name": "Distrito Zero (ES, por fecha)",
+      "url": "https://distritozero.es/buscar?controller=search&s=dragon+ball+fusion&order=product.date_add.desc&resultsPerPage=200",
       "type": "html",
       "priority": "medium",
       "selector": "#js-product-list .product-miniature",
       "title_selector": ".product-title",
       "link_selector": "a",
-      "price_selector": ".price"
+      "price_selector": ".price",
+      "_comment": "Nombre nuevo a propósito: con order=date_add.desc&resultsPerPage=200 aparecen productos que antes quedaban fuera de la página 1; con el nombre viejo el state los daría por NUEVOS y saldría una tanda de avisos falsos. Con nombre nuevo, baseline silencioso."
     },
     {
-      "name": "Master of Games (ES, Bilbao)",
-      "url": "https://masterofgames.es/en/search?controller=search&s=dragon+ball+fusion",
+      "name": "Master of Games (ES, Bilbao, por fecha)",
+      "url": "https://masterofgames.es/en/search?controller=search&s=dragon+ball+fusion&order=product.date_add.desc&resultsPerPage=200",
       "type": "html",
       "priority": "medium",
       "selector": "#js-product-list .product-miniature",
       "title_selector": ".product-title",
       "link_selector": "a",
-      "price_selector": ".price"
+      "price_selector": ".price",
+      "_comment": "Nombre nuevo a propósito: con order=date_add.desc&resultsPerPage=200 aparecen productos que antes quedaban fuera de la página 1; con el nombre viejo el state los daría por NUEVOS y saldría una tanda de avisos falsos. Con nombre nuevo, baseline silencioso."
     },
     {
-      "_comment": "=== MEDIUM — IMPORT JP/internacional (Shopify, envían internacional, EN). Manga booster y promos salen antes en JP. ===",
-      "name": "JumpIchiban Fusion World (JP)",
-      "url": "https://jumpichiban.com/collections/dragon-ball-super-card-game-fusion-world/products.json?limit=250",
+      "_comment": "El handle dragon-ball-super-card-game-fusion-world da 404. Catálogo entero (hoy solo figuras DB, que caen en exclude).",
+      "name": "JumpIchiban (catálogo, JP)",
+      "url": "https://jumpichiban.com/products.json?limit=250",
       "type": "api",
-      "priority": "medium"
+      "priority": "medium",
+      "currency": "$"
     },
     {
       "name": "TCG Corner Fusion World Fullset (JP)",
       "url": "https://tcg-corner.com/collections/dragon-ball-fusion-world-fullset/products.json?limit=250",
       "type": "api",
-      "priority": "medium"
+      "priority": "medium",
+      "currency": "$"
     },
     {
       "name": "Hobbiesville Booster Boxes (CA)",
       "url": "https://hobbiesville.com/collections/dragon-ball-super-booster-boxes/products.json?limit=250",
       "type": "api",
-      "priority": "medium"
+      "priority": "medium",
+      "currency": " CAD"
     },
     {
       "name": "The Card Vault Sealed (UK)",
       "url": "https://thecardvault.co.uk/collections/dragon-ball-super-cg-sealed-products/products.json?limit=250",
       "type": "api",
-      "priority": "medium"
+      "priority": "medium",
+      "currency": "£"
     },
     {
       "_comment": "=== Añadidas 26-sep-2026: Madrid Norte TCG (Shopify). Descartadas por Cloudflare (403 desde Actions, ni con navegador): Geekkaos y Metrópolis Center. ===",
