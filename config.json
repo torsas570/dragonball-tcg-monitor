@@ -26,6 +26,8 @@
   "notify_only_in_stock": true,
   "_comment_oos": "Las preventas se publican a menudo agotadas/Próximamente antes de abrir la reserva: un listado NUEVO marcado 🔥/🚨 avisa aunque no tenga stock (y otra vez como RESTOCK al abrir).",
   "notify_new_oos_priority": true,
+  "_comment_resync": "Si una tienda saca más de N listados nuevos de golpe (recatalogación; p. ej. una colección de cartas sueltas), lo no prioritario se absorbe con UN aviso de una línea. 🔥/🚨/restocks se avisan siempre.",
+  "resync_threshold": 20,
   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
   "_comment_required": "Solo se notifica si el título contiene alguno de estos. 'fusion world' capta el juego actual; 'dragon ball' capta cases/sobres que no repitan 'fusion world'. ドラゴンボール para imports JP.",
   "required_keywords": [
