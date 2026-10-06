@@ -161,6 +161,18 @@
     "promocional",
     "promo"
   ],
+  "_comment_official": "Webs oficiales: lo nuevo se avisa con '📰 novedad oficial' semanas antes de las preventas, y sus códigos de set (set_code_pattern) pasan 60 días a prioridad 📅: un listado de tienda con ese código suena aunque su título no diga caja/box.",
+  "official_sources": [
+    {
+      "name": "Web oficial Dragon Ball FW (productos)",
+      "url": "https://www.dbs-cardgame.com/fw/en/products/",
+      "selector": "li.prpductListItem",
+      "title_selector": "h3.cardText",
+      "link_selector": "a.cardLink",
+      "info_selector": ".cardInfo"
+    }
+  ],
+  "set_code_pattern": "\\b(FB|SB|ST)-?(\\d{2})\\b",
   "sites": [
     {
       "_comment": "=========================================================",
@@ -737,6 +749,33 @@
     {
       "name": "Samurai Sword Tokyo (Dragon Ball, JP)",
       "url": "https://samuraiswordtokyo.com/wp-json/wc/store/v1/products?per_page=100&orderby=date&order=desc&category=949",
+      "type": "api",
+      "priority": "medium"
+    },
+    {
+      "_comment": "=== Secundarias añadidas 06/10/2026, verificadas desde Actions (CardCenter da 403 desde Actions y Chaos Cards también desde casa: fuera). ===",
+      "name": "Industria61 (Dragon Ball Super)",
+      "url": "https://industria61.com/wp-json/wc/store/v1/products?per_page=100&orderby=date&order=desc&category=15091",
+      "type": "api",
+      "priority": "medium",
+      "include_keywords": [
+        "fusion world",
+        "fb0",
+        "fb1",
+        "sb0",
+        "st0",
+        "fs0"
+      ]
+    },
+    {
+      "name": "ZIAL TCG (Preventa)",
+      "url": "https://zialtcg.com/wp-json/wc/store/v1/products?per_page=100&orderby=date&order=desc&category=199",
+      "type": "api",
+      "priority": "medium"
+    },
+    {
+      "name": "Saruman Games (Fusion World)",
+      "url": "https://sarumangames.es/collections/dbscg-fusion-world/products.json?limit=250",
       "type": "api",
       "priority": "medium"
     }
