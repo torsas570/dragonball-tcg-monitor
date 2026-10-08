@@ -173,6 +173,124 @@
     }
   ],
   "set_code_pattern": "\\b(FB|SB|ST)-?(\\d{2})\\b",
+  "vip": {
+    "_comment": "Grupo de importantes (secret TELEGRAM_VIP_CHAT_ID). Sin idioma en el título = inglés; sin precio legible = entra.",
+    "promos": true,
+    "rules": [
+      {
+        "label": "Case",
+        "keywords": [
+          "case",
+          "booster case",
+          "sealed case",
+          "carton",
+          "cartón",
+          "12 displays",
+          "12 cajas",
+          "12 boxes",
+          "12 booster boxes",
+          "x12",
+          "12x"
+        ],
+        "exclude": [
+          "dice",
+          "dado",
+          "deck case",
+          "card case",
+          "storage",
+          "carrying",
+          "acryl",
+          "acril",
+          "sleeve",
+          "fundas",
+          "binder"
+        ],
+        "min_eur": 300
+      },
+      {
+        "label": "Manga Booster",
+        "keywords": [
+          "manga booster",
+          "special manga",
+          "manga vol",
+          "sb01",
+          "sb02",
+          "sb03",
+          "sb04",
+          "sb05",
+          "sb-01",
+          "sb-02",
+          "sb-03",
+          "sb-04",
+          "sb-05"
+        ]
+      },
+      {
+        "label": "Booster box JP ≤90€",
+        "keywords": [
+          "booster box",
+          "display",
+          "booster display",
+          "caja de sobres",
+          "caja sobres",
+          "caja 24 sobres",
+          "caja de 24",
+          "24 sobres",
+          "24 packs",
+          "caja booster",
+          "booster-box",
+          "box"
+        ],
+        "exclude": [
+          "illustration",
+          "deck box",
+          "storage",
+          "gift",
+          "tin",
+          "premium card collection",
+          "starter",
+          "double pack",
+          "collection box",
+          "sleeve",
+          "fundas"
+        ],
+        "lang": "jp",
+        "max_eur": 90
+      },
+      {
+        "label": "Booster box EN ≤110€",
+        "keywords": [
+          "booster box",
+          "display",
+          "booster display",
+          "caja de sobres",
+          "caja sobres",
+          "caja 24 sobres",
+          "caja de 24",
+          "24 sobres",
+          "24 packs",
+          "caja booster",
+          "booster-box",
+          "box"
+        ],
+        "exclude": [
+          "illustration",
+          "deck box",
+          "storage",
+          "gift",
+          "tin",
+          "premium card collection",
+          "starter",
+          "double pack",
+          "collection box",
+          "sleeve",
+          "fundas"
+        ],
+        "lang": "en",
+        "max_eur": 110
+      }
+    ]
+  },
   "sites": [
     {
       "_comment": "=========================================================",
